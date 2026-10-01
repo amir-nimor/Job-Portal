@@ -1,4 +1,4 @@
-package ir.maktabsharif.model;
+package ir.maktabsharif.model.Enums;
 
 public enum Rols {
     ADMIN,
