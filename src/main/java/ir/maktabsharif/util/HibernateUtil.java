@@ -1,6 +1,6 @@
 package ir.maktabsharif.util;
 
-import ir.maktabsharif.excption.HibernateException;
+import ir.maktabsharif.exception.HibernateException;
 import jakarta.persistence.*;
 
 import java.util.function.Function;

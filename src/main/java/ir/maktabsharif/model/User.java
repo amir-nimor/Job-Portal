@@ -26,7 +26,7 @@ public class User extends BaseMode<Integer> {
     @Enumerated(EnumType.STRING)
     private Rols rols;
 
-    public User(String fullName, String phoneNumber, Address address, String description, int monthWork, String resume  , Rols rols) {
+    public User(String fullName, String phoneNumber, Address address, String description, int monthWork, String resume  ) {
         this.fullName = fullName;
         this.phoneNumber = phoneNumber;
         this.address = address;
