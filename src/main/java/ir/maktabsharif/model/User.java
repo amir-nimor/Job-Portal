@@ -26,6 +26,11 @@ public class User extends BaseMode<Integer> {
     @Enumerated(EnumType.STRING)
     private Rols rols;
 
+
+    private String username;
+
+    private String password;
+
     public User(String fullName, String phoneNumber, Address address, String description, int monthWork, String resume  ) {
         this.fullName = fullName;
         this.phoneNumber = phoneNumber;
@@ -38,6 +43,22 @@ public class User extends BaseMode<Integer> {
 
     public User() {
 
+    }
+
+    public String getUsername() {
+        return username;
+    }
+
+    public void setUsername(String username) {
+        this.username = username;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
     }
 
     public Rols getRols() {
