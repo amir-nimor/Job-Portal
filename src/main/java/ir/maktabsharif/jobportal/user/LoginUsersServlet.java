@@ -1,4 +1,4 @@
-package ir.maktabsharif.jobportal;
+package ir.maktabsharif.jobportal.user;
 
 import ir.maktabsharif.model.Address;
 import ir.maktabsharif.model.Enums.Rols;
@@ -86,6 +86,6 @@ public class LoginUsersServlet extends HttpServlet {
 
 
     private String generateToken(String username,String password){
-        return "TOKEN->"+username+"="+password;
+        return "TOKENU->"+username+"="+password;
     }
 }

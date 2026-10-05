@@ -1,4 +1,4 @@
-package ir.maktabsharif.jobportal;
+package ir.maktabsharif.jobportal.company;
 
 import ir.maktabsharif.model.Address;
 import ir.maktabsharif.model.Company;
@@ -6,10 +6,7 @@ import ir.maktabsharif.service.company.CompanyServiceImpl;
 import jakarta.servlet.ServletConfig;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
-import jakarta.servlet.http.HttpServlet;
-import jakarta.servlet.http.HttpServletRequest;
-import jakarta.servlet.http.HttpServletResponse;
-import jakarta.servlet.http.HttpSession;
+import jakarta.servlet.http.*;
 
 import java.io.IOException;
 
@@ -34,6 +31,9 @@ public class LoginCompanyServlet extends HttpServlet {
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         HttpSession session = req.getSession();
 
+
+        String username =  req.getParameter("username");
+        String password =  req.getParameter("password");
         String name = req.getParameter("name");
         String description = req.getParameter("description");
         String city = req.getParameter("city");
@@ -49,13 +49,28 @@ public class LoginCompanyServlet extends HttpServlet {
         session.setAttribute("zipcode",zipcode);
         session.setAttribute("site",site);
         session.setAttribute("phoneNumber",phoneNumber);
+        session.setAttribute("username",username);
+        session.setAttribute("password",password);
+
+        String token = generateToken(username,password);
+
+        session.setAttribute("token",token);
+
+        Cookie cookie = new Cookie("token",token);
+        resp.addCookie(cookie);
 
         Company company = new Company(name,description,new Address(city,street,zipcode),site,phoneNumber);
+        company.setUsername(username);
+        company.setPassword(password);
 
         Integer id = companyService.save(company).getId();
 
         session.setAttribute("id",id);
 
 
+    }
+
+    private String generateToken(String username,String password){
+        return "TOKENC->"+username+"="+password;
     }
 }

@@ -28,6 +28,11 @@ public class Company extends BaseMode<Integer> {
     @OneToMany
     private List<JobPosition> jobPositions;
 
+
+    private String username;
+
+    private String password;
+
     public Company(String name, String description, Address address, String site, String phoneNumber) {
         this.name = name;
         this.description = description;
@@ -39,6 +44,22 @@ public class Company extends BaseMode<Integer> {
 
     public Company() {
 
+    }
+
+    public String getUsername() {
+        return username;
+    }
+
+    public void setUsername(String username) {
+        this.username = username;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
     }
 
     public String getName() {
@@ -97,7 +118,6 @@ public class Company extends BaseMode<Integer> {
                 ", address=" + address +
                 ", site='" + site + '\'' +
                 ", phoneNumber='" + phoneNumber + '\'' +
-                ", jobPositions=" + jobPositions +
                 '}';
     }
 }

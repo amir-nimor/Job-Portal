@@ -9,8 +9,11 @@
 </h1>
 <br/>
 
-<a href="/LoginUser">login</a>
-<a href="/CompanyLoginServlet">Company login</a>
+<a href="/LoginUser">login</a><br>
+<a href="/CompanyLoginServlet">Company login</a><br>
+<a href="/LogoutUser">logout</a><br>
+<a href="/singUp">singup</a><br>
+<a href="/profile">profile</a><br>
 
 </body>
 </html>

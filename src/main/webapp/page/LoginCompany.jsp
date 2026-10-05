@@ -14,6 +14,14 @@
 
 <form action="/CompanyLoginServlet" method="post">
 
+    <label>Username
+        <input type="text" name="username" placeholder="Enter Username">
+    </label>
+
+    <label>Password
+        <input type="password" name="password" placeholder="Enter Password">
+    </label>
+
     <label>name
     <input type="text" name="name" />
     </label>
